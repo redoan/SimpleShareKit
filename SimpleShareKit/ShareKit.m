@@ -205,7 +205,7 @@
         }];
     }
     
-    if(FBSession.activeSession.isOpen){
+    else if(FBSession.activeSession.isOpen){
         [self showFriendPickerWithOptions:params];
     }
 }
@@ -219,51 +219,46 @@
     // Use the modal wrapper method to display the picker.
     [friendPickerController presentModallyFromViewController:callerClass animated:YES handler:
      ^(FBViewController *sender, BOOL donePressed) {
-         if (!donePressed) {
+         if (donePressed) {
+             NSString *message;
+             NSString* fid;
+             NSString* fbUserName;
+             
+             NSLog(@"DONE PRESSED");
+             {
+                 
+                 NSMutableString *text = [[NSMutableString alloc] init];
+                 
+                 // we pick up the users from the selection, and create a string that we use to update the text view
+                 // at the bottom of the display; note that self.selection is a property inherited from our base class
+                 for (id<FBGraphUser> user in friendPickerController.selection) {
+                     if ([text length]) {
+                         [text appendString:@", "];
+                     }
+                     [text appendString:user.name];
+                     
+                     fid = user.id;
+                     fbUserName = user.name;
+                 }
+                 message = text;
+             }
+             [self showDialogwithUser:fid andName:message withOptions:params];
+         }
+
+         else{
              [delegate shareKitSharingFailed:skFailureFacebookFriendPickerCanceled];
              return;
          }
-         NSString *message;
-         NSString* fid;
-         NSString* fbUserName;
+        
          
-         {
-             
-             NSMutableString *text = [[NSMutableString alloc] init];
-             
-             // we pick up the users from the selection, and create a string that we use to update the text view
-             // at the bottom of the display; note that self.selection is a property inherited from our base class
-             for (id<FBGraphUser> user in friendPickerController.selection) {
-                 if ([text length]) {
-                     [text appendString:@", "];
-                 }
-                 [text appendString:user.name];
-                 
-                 fid = user.id;
-                 fbUserName = user.name;
-             }
-             message = text;
-         }
-         [self showDialogwithUser:fid andName:message withOptions:params];
-     }];
-    
+         }];
+
 }
 -(void)showDialogwithUser: (NSString*)userid andName:(NSString*)name  withOptions:(NSMutableDictionary*)params
 {
-//    NSMutableDictionary *params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-//                                   @"iRecognize by Terryberry", @"name",
-//                                   @"iRecognize by Terryberry", @"caption",
-//                                   @"http://terryberry.com", @"link",
-//                                   @"http://victorysites.org/apps/terryberry/logo.png", @"picture",
-//                                   @"demo", @"description",
-//                                   
-//                                   userid, @"to",
-//
-//                                   nil];
-    
-
-    [params setObject:userid forKey:@"to"];
-    
+    if (userid) {
+        [params setObject:userid forKey:@"to"]; 
+    }
     
     [FBWebDialogs presentFeedDialogModallyWithSession:nil
                                            parameters:params
@@ -285,20 +280,27 @@
              {
                  // Handle the publish feed callback
                  NSString *resultString = [resultURL absoluteString];
-                 [self checkmeWithResult:resultString];
+                 [self checkmeWithResult:resultString userid:userid];
              }
          }
      }];
 }
--(void) checkmeWithResult:(NSString*)resultString //withName:(NSString*)name
-{
+-(void) checkmeWithResult:(NSString*)resultString userid:(NSString*)userid {
+    
     if ([resultString rangeOfString:@"post_id"].location == NSNotFound)
     {
         [delegate shareKitSharingFailed:skFailureFacebookFeedDialogCanceled];
     }
     else
     {
-        [delegate shareKitSharingFailed:skFinishedFacebookPostOnFriendsWall];
+        if (userid) {
+           [delegate shareKitSharingFailed:skFinishedFacebookPostOnFriendsWall];
+        }
+        
+        else{
+            [delegate shareKitSharingFailed:skFinishedFacebookPostOnUsersWall];
+        }
+        
     }
 }
 

@@ -27,7 +27,10 @@
 		9281B2971760AE88009645EC /* ShareKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9281B2961760AE88009645EC /* ShareKit.m */; };
 		9281B2991760AE9B009645EC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9281B2981760AE9B009645EC /* Security.framework */; };
 		9281B2BC1760BE84009645EC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9281B2BB1760BE84009645EC /* FacebookSDK.framework */; };
-		9281B2CD1760D142009645EC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9281B2CC1760D142009645EC /* Icon.png */; };
+		92B11CFE176113EB00B95719 /* UIAlertView+Colored.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B11CFD176113EB00B95719 /* UIAlertView+Colored.m */; };
+		92B11D031761281800B95719 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B11D001761281800B95719 /* Icon.png */; };
+		92B11D041761281800B95719 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B11D011761281800B95719 /* Icon@2x.png */; };
+		92B11D051761281800B95719 /* SimpleShareKit.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B11D021761281800B95719 /* SimpleShareKit.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +60,11 @@
 		9281B2961760AE88009645EC /* ShareKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareKit.m; sourceTree = "<group>"; };
 		9281B2981760AE9B009645EC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9281B2BB1760BE84009645EC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		9281B2CC1760D142009645EC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		92B11CFC176113EB00B95719 /* UIAlertView+Colored.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Colored.h"; sourceTree = "<group>"; };
+		92B11CFD176113EB00B95719 /* UIAlertView+Colored.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Colored.m"; sourceTree = "<group>"; };
+		92B11D001761281800B95719 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		92B11D011761281800B95719 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		92B11D021761281800B95719 /* SimpleShareKit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SimpleShareKit.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +91,9 @@
 		9281B2511760AE0B009645EC = {
 			isa = PBXGroup;
 			children = (
-				9281B2CC1760D142009645EC /* Icon.png */,
+				92B11D001761281800B95719 /* Icon.png */,
+				92B11D011761281800B95719 /* Icon@2x.png */,
+				92B11D021761281800B95719 /* SimpleShareKit.png */,
 				9281B2BB1760BE84009645EC /* FacebookSDK.framework */,
 				9281B2981760AE9B009645EC /* Security.framework */,
 				9281B2921760AE6D009645EC /* FacebookSDKResources.bundle */,
@@ -120,6 +129,8 @@
 		9281B2661760AE0B009645EC /* SimpleShareKit */ = {
 			isa = PBXGroup;
 			children = (
+				92B11CFC176113EB00B95719 /* UIAlertView+Colored.h */,
+				92B11CFD176113EB00B95719 /* UIAlertView+Colored.m */,
 				9281B26F1760AE0C009645EC /* AppDelegate.h */,
 				9281B2701760AE0C009645EC /* AppDelegate.m */,
 				9281B2781760AE0C009645EC /* ViewController.h */,
@@ -203,7 +214,9 @@
 				9281B2771760AE0C009645EC /* Default-568h@2x.png in Resources */,
 				9281B27D1760AE0C009645EC /* ViewController.xib in Resources */,
 				9281B2941760AE6D009645EC /* FacebookSDKResources.bundle in Resources */,
-				9281B2CD1760D142009645EC /* Icon.png in Resources */,
+				92B11D031761281800B95719 /* Icon.png in Resources */,
+				92B11D041761281800B95719 /* Icon@2x.png in Resources */,
+				92B11D051761281800B95719 /* SimpleShareKit.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +231,7 @@
 				9281B2711760AE0C009645EC /* AppDelegate.m in Sources */,
 				9281B27A1760AE0C009645EC /* ViewController.m in Sources */,
 				9281B2971760AE88009645EC /* ShareKit.m in Sources */,
+				92B11CFE176113EB00B95719 /* UIAlertView+Colored.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

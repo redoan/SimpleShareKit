@@ -19,6 +19,7 @@ typedef enum{
     skFinishedSavedToGallery,
     skFinishedCopiedToClipboard,
     skFinishedFacebookPostOnFriendsWall,
+    skFinishedFacebookPostOnUsersWall,
 }skFinishedType;
 
 

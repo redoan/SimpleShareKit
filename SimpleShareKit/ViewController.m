@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ShareKit.h"
+#import "UIAlertView+Colored.h"
 
 @interface ViewController ()<SimpleShareKitDelegate>
 {
@@ -21,6 +22,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    share = [[ShareKit alloc] init];
+    [share setDelegate:self];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,48 +34,162 @@
 }
 
 -(IBAction)email:(id)sender{
-    share = [[ShareKit alloc] init];
-    [share setDelegate:self];
-    
+
+    [share shareViaEmailWithSubject:@"Its really simple!" andBody:@"Check out this SimpleShareKit! visit http://github.com/redoan/SimpleShareKit/" andImage:[UIImage imageNamed:@"SimpleShareKit"] fromViewController:self];
+}
+
+
+-(IBAction)shareOnTwitter:(id)sender{
+    [share shareOnTwitter:[UIImage imageNamed:@"SimpleShareKit"] withText:@"Check out this SimpleShareKit!" andURL:@"https://github.com/redoan/SimpleShareKit" andViewController:self];
+}
+
+-(IBAction)shareOnFacebook:(id)sender{
+    [share shareOnFacebook:[UIImage imageNamed:@"SimpleShareKit"] withText:@"Check out this SimpleShareKit! " andURL:@"https://github.com/redoan/SimpleShareKit" andViewController:self];
+}
+
+-(IBAction)saveImageToDevice:(id)sender{
+    [share saveImageToPhotosRoll:[UIImage imageNamed:@"SimpleShareKit"]];
+}
+
+-(IBAction)postOnFriendsWall:(id)sender{
     NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-    @"LINK NAME", @"name",
-    @"CAPTION", @"caption",
-    @"http://www.redoan.com", @"link",
-    @"http://victorysites.org/apps/terryberry/logo.png", @"picture",
-    @"DESCRIPTION", @"description",
-     nil];
+                                  @"SimpleShareKit", @"name",
+                                  @"iOS 6 plug n play sharing", @"caption",
+                                  @"https://github.com/redoan/SimpleShareKit", @"link",
+                                  @"https://github.com/redoan/SimpleShareKit/SimpleShareKit.png", @"picture",
+                                  @"iOS sharing made easy! Check it now.", @"description",
+                                  nil];
     
     [share postOnFriendsWall:self withOptions:param];
 }
 
+-(IBAction)copyImageToClipboard:(id)sender{
+    [share copyImageToClipBoard:[UIImage imageNamed:@"Icon"]];
+}
+
+
+
+//typedef enum{
+//    skFinishedEmailSent= 1,
+//    skFinishedEmailSaved,
+//    skFinishedTwitterDone,
+//    skFinishedFacebookDone,
+//    skFinishedSavedToGallery,
+//    skFinishedCopiedToClipboard,
+//    skFinishedFacebookPostOnFriendsWall,
+//    skFinishedFacebookPostOnUsersWall,
+//}skFinishedType;
+
 -(void)shareKitSharingFailed:(int)type{
+    NSString *message;
+    message = @"";
     switch (type) {
         case skFailureEmailCanceled:
-            NSLog(@"CANCEL DELEGATE");
+            message = @"You canceled the email!";
             break;
             
         case skFailureEmailError:
-            NSLog(@"ERROR DELEGATE");
+            message = @"Email sending failed!";
+            break;
+            
+        case skFailureTwitterCancelled:
+            message = @"You canceled the Tweet!";
+            break;
+            
+        case skFailureFacebookCancelled:
+            message = @"You canceled the Facebook Post!";
+            break;
+            
+        case skFailureFacebookPermission:
+            message = @"Facebook Permission missing!";
+            break;
+            
+        case skFailureFacebookFriendPickerCanceled:
+            message = @"You cancelled the Friendpicker!";
+            break;
+            
+        case skFailureFacebookFeedDialogClosed:
+            message = @"You clossed Facebook feedDialog";
+            break;
+            
+        case skFailureFacebookFeedDialogCanceled:
+            message = @"You canceled Facebook share";
+            break;
+            
+        case skFailureFacebookFeedDialogError:
+            message = @"Error poting on Friend's wall";
             break;
             
         default:
             break;
     }
+    
+    UIAlertView*alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+    [alert show];
+    [self performSelector:@selector(hideAlert:) withObject:alert afterDelay:2];
 }
 
+//typedef enum {
+//    skFailureEmailCanceled= 1,
+//    skFailureEmailError,
+//    skFailureTwitterCancelled,
+//    skFailureTwitterNotAvailable,
+//    skFailureFacebookCancelled,
+//    skFailureFacebookNotAvailable,
+//    skFailureFacebookPermission,
+//    skFailureFacebookFriendPickerCanceled,
+//    skFailureFacebookFeedDialogClosed,
+//    skFailureFacebookFeedDialogCanceled,
+//    skFailureFacebookFeedDialogError,
+//    
+//}skFailureType;
+
 -(void)shareKitSharingFinished:(int)type{
+    NSString *message;
     switch (type) {
         case skFinishedEmailSaved:
-            NSLog(@"Saved DELEGATE");
+            message = @"You saved the email!";
             break;
             
         case skFinishedEmailSent:
-            NSLog(@"Sent DELEGATE");
+            message = @"Email is queued to sent!";
+            break;
+            
+        case skFinishedTwitterDone:
+            message = @"Tweet successful!";
+            break;
+            
+        case skFinishedFacebookDone:
+            message = @"Posted on Facebook!";
+            break;
+            
+        case skFinishedSavedToGallery:
+            message = @"Image saved on Device Gallery!";
+            break;
+            
+        case skFinishedCopiedToClipboard:
+            message = @"Image coppied to clipboard!";
+            break;
+            
+        case skFinishedFacebookPostOnFriendsWall:
+            message = @"Successfully Posted to your friend's wall!";
+            break;
+            
+        case skFinishedFacebookPostOnUsersWall:
+            message = @"Successfully Posted on your wall!";
             break;
             
         default:
             break;
     }
+    
+    UIAlertView*alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+    [alert show];
+    [self performSelector:@selector(hideAlert:) withObject:alert afterDelay:2];
+}
+
+-(void)hideAlert:(UIAlertView*)alert{
+    [alert dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 
