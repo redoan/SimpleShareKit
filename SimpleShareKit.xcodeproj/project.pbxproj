@@ -27,7 +27,7 @@
 		9281B2971760AE88009645EC /* ShareKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9281B2961760AE88009645EC /* ShareKit.m */; };
 		9281B2991760AE9B009645EC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9281B2981760AE9B009645EC /* Security.framework */; };
 		9281B2BC1760BE84009645EC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9281B2BB1760BE84009645EC /* FacebookSDK.framework */; };
-		92B11CFE176113EB00B95719 /* UIAlertView+Colored.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B11CFD176113EB00B95719 /* UIAlertView+Colored.m */; };
+		92B11CFE176113EB00B95719 /* myAllertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B11CFD176113EB00B95719 /* myAllertView.m */; };
 		92B11D031761281800B95719 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B11D001761281800B95719 /* Icon.png */; };
 		92B11D041761281800B95719 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B11D011761281800B95719 /* Icon@2x.png */; };
 		92B11D051761281800B95719 /* SimpleShareKit.png in Resources */ = {isa = PBXBuildFile; fileRef = 92B11D021761281800B95719 /* SimpleShareKit.png */; };
@@ -60,8 +60,8 @@
 		9281B2961760AE88009645EC /* ShareKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareKit.m; sourceTree = "<group>"; };
 		9281B2981760AE9B009645EC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9281B2BB1760BE84009645EC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		92B11CFC176113EB00B95719 /* UIAlertView+Colored.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Colored.h"; sourceTree = "<group>"; };
-		92B11CFD176113EB00B95719 /* UIAlertView+Colored.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Colored.m"; sourceTree = "<group>"; };
+		92B11CFC176113EB00B95719 /* myAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myAlertView.h; sourceTree = "<group>"; };
+		92B11CFD176113EB00B95719 /* myAllertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myAllertView.m; sourceTree = "<group>"; };
 		92B11D001761281800B95719 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		92B11D011761281800B95719 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		92B11D021761281800B95719 /* SimpleShareKit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SimpleShareKit.png; sourceTree = "<group>"; };
@@ -129,8 +129,8 @@
 		9281B2661760AE0B009645EC /* SimpleShareKit */ = {
 			isa = PBXGroup;
 			children = (
-				92B11CFC176113EB00B95719 /* UIAlertView+Colored.h */,
-				92B11CFD176113EB00B95719 /* UIAlertView+Colored.m */,
+				92B11CFC176113EB00B95719 /* myAlertView.h */,
+				92B11CFD176113EB00B95719 /* myAllertView.m */,
 				9281B26F1760AE0C009645EC /* AppDelegate.h */,
 				9281B2701760AE0C009645EC /* AppDelegate.m */,
 				9281B2781760AE0C009645EC /* ViewController.h */,
@@ -231,7 +231,7 @@
 				9281B2711760AE0C009645EC /* AppDelegate.m in Sources */,
 				9281B27A1760AE0C009645EC /* ViewController.m in Sources */,
 				9281B2971760AE88009645EC /* ShareKit.m in Sources */,
-				92B11CFE176113EB00B95719 /* UIAlertView+Colored.m in Sources */,
+				92B11CFE176113EB00B95719 /* myAllertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

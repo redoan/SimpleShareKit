@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "ShareKit.h"
-#import "UIAlertView+Colored.h"
+#import "myAlertView.h"
 
 @interface ViewController ()<SimpleShareKitDelegate>
 {
@@ -124,7 +124,7 @@
             break;
     }
     
-    UIAlertView*alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+    myAlertView*alert = [[myAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
     [alert show];
     [self performSelector:@selector(hideAlert:) withObject:alert afterDelay:2];
 }
@@ -183,7 +183,7 @@
             break;
     }
     
-    UIAlertView*alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
+    myAlertView*alert = [[myAlertView alloc] initWithTitle:@"" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
     [alert show];
     [self performSelector:@selector(hideAlert:) withObject:alert afterDelay:2];
 }

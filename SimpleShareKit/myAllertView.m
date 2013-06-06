@@ -6,8 +6,8 @@
 //  Copyright (c) 2011 Tap Dezign, LLC. All rights reserved.
 //
 
-#import "UIAlertView+Colored.h"
-@implementation UIAlertView(Colored)
+#import "myAlertView.h"
+@implementation myAlertView
 
 #pragma mark -
 #pragma mark Memory management

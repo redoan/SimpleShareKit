@@ -7,5 +7,5 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface UIAlertView(Colored)
+@interface myAlertView:UIAlertView
 @end
