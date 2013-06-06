@@ -56,7 +56,7 @@
                                   @"SimpleShareKit", @"name",
                                   @"iOS 6 plug n play sharing", @"caption",
                                   @"https://github.com/redoan/SimpleShareKit", @"link",
-                                  @"https://github.com/redoan/SimpleShareKit/SimpleShareKit.png", @"picture",
+                                  @"https://raw.github.com/redoan/SimpleShareKit/master/SimpleShareKit.png", @"picture",
                                   @"iOS sharing made easy! Check it now.", @"description",
                                   nil];
     
@@ -176,7 +176,7 @@
             break;
             
         case skFinishedFacebookPostOnUsersWall:
-            message = @"Successfully Posted on your wall!";
+            message = @"You didn't pick a friend so it has been posted on your wall!";
             break;
             
         default:

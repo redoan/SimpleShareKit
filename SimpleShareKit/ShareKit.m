@@ -32,7 +32,7 @@
     
     if(image!=nil)
     {
-        NSData *imageData = UIImageJPEGRepresentation([UIPasteboard generalPasteboard].image, 0.0);
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.0);
         
         
         [mail addAttachmentData:imageData mimeType:@"image/jpeg" fileName:[NSString stringWithFormat:@"Attachment.jpg"]];
@@ -294,11 +294,11 @@
     else
     {
         if (userid) {
-           [delegate shareKitSharingFailed:skFinishedFacebookPostOnFriendsWall];
+           [delegate shareKitSharingFinished:skFinishedFacebookPostOnFriendsWall];
         }
         
         else{
-            [delegate shareKitSharingFailed:skFinishedFacebookPostOnUsersWall];
+            [delegate shareKitSharingFinished:skFinishedFacebookPostOnUsersWall];
         }
         
     }

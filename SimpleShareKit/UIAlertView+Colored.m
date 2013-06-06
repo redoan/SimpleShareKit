@@ -27,8 +27,8 @@
         
 		if ([subview isMemberOfClass:[UILabel class]]) { //Point to UILabels To Change Text
 			UILabel *label = (UILabel*)subview;	//Cast From UIView to UILabel
-			label.textColor = [UIColor whiteColor];
-            UIFont *font = [UIFont fontWithName:@"Futura Medium" size:15];
+			label.textColor = [UIColor blackColor];
+            UIFont *font = [UIFont fontWithName:@"Futura Medium" size:25];
             label.font = font;
 			label.shadowColor = [UIColor clearColor];
             label.numberOfLines = 0;
@@ -42,7 +42,7 @@
 {
 	//////////////GET REFERENCE TO CURRENT GRAPHICS CONTEXT
 	CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [UIColor grayColor].CGColor);
+    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
     CGContextFillRect(context, self.bounds);
     
 }
