@@ -1,6 +1,3 @@
-
-![Screenshot1](https://dl.dropbox.com/u/339699/github/ASFBPostController.png)
-
 SimpleShareKit
 ==================
 
@@ -16,17 +13,17 @@ SimpleShareKit allows you to integrate common sharing features to your iOS app. 
 
 # Installation
 
-1. Copy ShareKit.h and ShareKit.m file to your Xcode project.
-2. In the class where you want to integrate sharing features, import ShareKit.h and declare SimpleShareKitDelegate protocol. 
-3. Create a ShareKit object in your class interface.
+    -Copy ShareKit.h and ShareKit.m file to your Xcode project.
+    -In the class where you want to integrate sharing features, import ShareKit.h and declare SimpleShareKitDelegate protocol.
+    -Create a ShareKit object in your class interface.
 
-	#import "ShareKit.h" 
+ 
 	@interface YourClassName ()<SimpleShareKitDelegate>
 	{
 		ShareKit *share;
 	}
 
-4. In viewDidLoad, allocate the ShareKit object and as delegate, refer files owner.
+    //In viewDidLoad, allocate the ShareKit object and as delegate, refer files owner.
 
 	- (void)viewDidLoad
 	{
@@ -35,7 +32,7 @@ SimpleShareKit allows you to integrate common sharing features to your iOS app. 
 		[share setDelegate:self]; 
 	}
 
-5. Now start calling sharing methods.
+    Now start calling sharing methods.
 
 	- (void)shareViaEmailWithSubject:(NSString*)subject andBody:(NSString*)message andImage:(UIImage*)image fromViewController:(UIViewController*)view;
 
