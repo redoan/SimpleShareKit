@@ -79,7 +79,7 @@
 
 #pragma mark- Sharing Via Twitter
 
-- (void)shareOnTwitter:(UIImage *)image withText:(NSString*)initialText andURL:(NSString*)urlString andViewController:(UIViewController*)view
+- (void)shareOnTwitter:(UIImage *)image withText:(NSString*)initialText andURL:(NSString*)urlString fromViewController:(UIViewController*)view
 {
     
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
@@ -124,7 +124,7 @@
 
 #pragma mark- Sharing Via Facebook
 
-- (void)shareOnFacebook:(UIImage *)image withText:(NSString*)initialText andURL:(NSString*)urlString andViewController:(UIViewController*)view
+- (void)shareOnFacebook:(UIImage *)image withText:(NSString*)initialText andURL:(NSString*)urlString fromViewController:(UIViewController*)view
 {
     
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
@@ -182,7 +182,7 @@
 
 #pragma mark - faceBookFriendsWall
 
--(void)postOnFriendsWall:(UIViewController*)view withOptions:(NSMutableDictionary*)params{
+-(void)postOnFriendsWall:(NSMutableDictionary*)params fromViewController:(UIViewController*)view{
     
     callerClass = view;
     

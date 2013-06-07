@@ -40,11 +40,11 @@
 
 
 -(IBAction)shareOnTwitter:(id)sender{
-    [share shareOnTwitter:[UIImage imageNamed:@"SimpleShareKit"] withText:@"Check out this SimpleShareKit!" andURL:@"https://github.com/redoan/SimpleShareKit" andViewController:self];
+    [share shareOnTwitter:[UIImage imageNamed:@"SimpleShareKit"] withText:@"Check out this SimpleShareKit!" andURL:@"https://github.com/redoan/SimpleShareKit" fromViewController:self];
 }
 
 -(IBAction)shareOnFacebook:(id)sender{
-    [share shareOnFacebook:[UIImage imageNamed:@"SimpleShareKit"] withText:@"Check out this SimpleShareKit! " andURL:@"https://github.com/redoan/SimpleShareKit" andViewController:self];
+    [share shareOnFacebook:[UIImage imageNamed:@"SimpleShareKit"] withText:@"Check out this SimpleShareKit! " andURL:@"https://github.com/redoan/SimpleShareKit" fromViewController:self];
 }
 
 -(IBAction)saveImageToDevice:(id)sender{
@@ -60,7 +60,7 @@
                                   @"iOS sharing made easy! Check it now.", @"description",
                                   nil];
     
-    [share postOnFriendsWall:self withOptions:param];
+    [share postOnFriendsWall:param fromViewController:self];
 }
 
 -(IBAction)copyImageToClipboard:(id)sender{
@@ -80,7 +80,7 @@
 //    skFinishedFacebookPostOnUsersWall,
 //}skFinishedType;
 
--(void)shareKitSharingFailed:(int)type{
+-(void)shareKitSharingFailed:(skFailureType)type{
     NSString *message;
     message = @"";
     switch (type) {
@@ -144,7 +144,7 @@
 //    
 //}skFailureType;
 
--(void)shareKitSharingFinished:(int)type{
+-(void)shareKitSharingFinished:(skFinishedType)type{
     NSString *message;
     switch (type) {
         case skFinishedEmailSaved:

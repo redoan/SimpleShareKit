@@ -41,8 +41,8 @@ typedef enum {
 
 @protocol SimpleShareKitDelegate <NSObject>
 
--(void)shareKitSharingFinished:(int)type;
--(void)shareKitSharingFailed:(int)type;
+-(void)shareKitSharingFinished:(skFinishedType)type;
+-(void)shareKitSharingFailed:(skFailureType)type;
 @end
 
 @interface ShareKit : NSObject
@@ -54,15 +54,15 @@ typedef enum {
 
 -(void)shareViaEmailWithSubject:(NSString*)subject andBody:(NSString*)message andImage:(UIImage*)image fromViewController:(UIViewController*)view;
 
-- (void)shareOnTwitter:(UIImage *)image withText:(NSString*)initialText andURL:(NSString*)urlString andViewController:(UIViewController*)view;
+-(void)shareOnTwitter:(UIImage *)image withText:(NSString*)initialText andURL:(NSString*)urlString fromViewController:(UIViewController*)view;
 
-- (void)shareOnFacebook:(UIImage *)image withText:(NSString*)initialText andURL:(NSString*)urlString andViewController:(UIViewController*)view;
+-(void)shareOnFacebook:(UIImage *)image withText:(NSString*)initialText andURL:(NSString*)urlString fromViewController:(UIViewController*)view;
+
+-(void)postOnFriendsWall:(NSMutableDictionary*)params fromViewController:(UIViewController*)view;
 
 -(void)saveImageToPhotosRoll:(UIImage*)image;
 
 -(void)copyImageToClipBoard:(UIImage*)image;
-
--(void)postOnFriendsWall:(UIViewController*)view withOptions:(NSMutableDictionary*)params;
 
 @property (nonatomic, assign) id <SimpleShareKitDelegate> delegate;
 
