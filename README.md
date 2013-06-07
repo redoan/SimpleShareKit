@@ -8,6 +8,10 @@ SimpleShareKit
 SimpleShareKit allows you to integrate common sharing features to your iOS app. Its really simple to use.
 
 Currently we support:
+<<<<<<< HEAD
+=======
+----------------------
+>>>>>>> 322969d8b1fa0ab43289a0a7af6930494e903f67
 
      Facebook post
      Facebook post on Friend's wall
