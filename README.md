@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ![Screenshot1](https://dl.dropbox.com/u/339699/github/ASFBPostController.png)
 
 SimpleShareKit
@@ -118,6 +119,8 @@ https://github.com/facebook/facebook-ios-sdk/
 AppStair LLC
 http://appstair.com
 =======
+=======
+>>>>>>> 8154dca5f42425fe389ed7027c5569ae91e377ba
 GitHub Markup
 =============
 
@@ -238,4 +241,7 @@ Contributing
 [r2h]: http://github.com/github/markup/tree/master/lib/github/commands/rest2html
 [r2hc]: http://github.com/github/markup/tree/master/lib/github/markups.rb#L13
 [1]: http://github.com/github/markup/pulls
+<<<<<<< HEAD
+>>>>>>> 8154dca5f42425fe389ed7027c5569ae91e377ba
+=======
 >>>>>>> 8154dca5f42425fe389ed7027c5569ae91e377ba
