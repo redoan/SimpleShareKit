@@ -16,6 +16,7 @@ SimpleShareKit allows you to integrate common sharing features to your iOS app. 
 1.Copy ShareKit.h and ShareKit.m file to your Xcode project.
 
 2.Create your iOS facebook App (http://developers.facebook.com/).
+    REMEMBER -  Check Native iOS App in your Facebook App Basic Setting and fill the Bundle ID same as your Xcode project Bundle ID
 
 3.Add a row in your info.plist file: FacebookAppID - your facebook appID
 
