@@ -76,41 +76,52 @@ SimpleShareKit allows you to integrate common sharing features to your iOS app. 
 	-(void)shareKitSharingFinished:(skFinishedType)type;
 	-(void)shareKitSharingFailed:(skFailureType)type;
 
-    skFinishedType
+***skFinishedType
     
-    skFinishedEmailSent
-        User clicked send button
-    skFinishedEmailSaved
-        User clicked Save Draft button
-    skFinishedTwitterDone
-        Tweet Success
-    skFinishedFacebookDone
-        Facbook Native Post Success
-    skFinishedSavedToGallery
-        Image Saved to Gallery
-    skFinishedCopiedToClipboard
-        Image Copied on clipboard
-    skFinishedFacebookPostOnFriendsWall
-        User selected a friend and posted on his wall
-    skFinishedFacebookPostOnUsersWall
-        User pressed done without selecting friend and then post via FBWebDialog, so posted on user's wall
+skFinishedEmailSent :User clicked send button
+
+skFinishedEmailSaved :User clicked Save Draft button
+
+skFinishedTwitterDone :Tweet Success
+
+skFinishedFacebookDone :Facbook Native Post Success
+
+skFinishedSavedToGallery: Image Saved to Gallery
 
 
-
-    typedef enum {
-    skFailureEmailCanceled= 1,
-    skFailureEmailError,
-    skFailureTwitterCancelled,
-    skFailureTwitterNotAvailable,
-    skFailureFacebookCancelled,
-    skFailureFacebookNotAvailable,
-    skFailureFacebookPermission,
-    skFailureFacebookFriendPickerCanceled,
-    skFailureFacebookFeedDialogClosed,
-    skFailureFacebookFeedDialogCanceled,
-    skFailureFacebookFeedDialogError,
+skFinishedCopiedToClipboard :Image Copied on clipboard
     
-    }skFailureType;
+    
+skFinishedFacebookPostOnFriendsWall :User selected a friend and posted on his wall
+    
+skFinishedFacebookPostOnUsersWall :User pressed done without selecting friend and then post via FBWebDialog, so posted on user's wall
+
+
+
+***skFailureType
+
+skFailureEmailCanceled :User canceld the email by Delete Draft
+
+skFailureEmailError :Error sending email
+    
+skFailureTwitterCancelled: User cancelled the Tweet
+    
+skFailureTwitterNotAvailable :Twitter framework not available
+
+skFailureFacebookCancelled :User canceled facebook share 
+    
+skFailureFacebookNotAvailable :Facebook not available 
+
+skFailureFacebookPermission :Facebook read friendlis permission not granted by user.
+
+skFailureFacebookFriendPickerCanceled :User closed the FBFriendPicker
+
+skFailureFacebookFeedDialogClosed :User cloesd facebook feedDialog by pressing x
+
+skFailureFacebookFeedDialogCanceled :User cancel facebook feedDialog
+
+skFailureFacebookFeedDialogError :Error posting on facebook
+    
 
 
 License
