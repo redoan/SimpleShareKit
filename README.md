@@ -4,16 +4,16 @@ SimpleShareKit
 ==================
 
 SimpleShareKit allows you to integrate common sharing features to your iOS app. Its really simple to use.
-You can easily integrate 
 
-Features
+Currently we support:
+----------------------
 
-    - Facebook post
-    - Facebook post on Friend's wall
-    - Twitter tweets
-    - Emailing
-    - Saving Image on Device
-    - Copy on clipboard
+     Facebook post
+     Facebook post on Friend's wall
+     Twitter tweets
+     Emailing
+     Saving Image on Device
+     Copy on clipboard
     
 
 # Installation
