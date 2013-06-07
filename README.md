@@ -14,8 +14,11 @@ SimpleShareKit allows you to integrate common sharing features to your iOS app. 
 # Installation
 
 1.Copy ShareKit.h and ShareKit.m file to your Xcode project.
+
 2.Create your iOS facebook App (http://developers.facebook.com/).
+
 3.Add a row in your info.plist file: FacebookAppID - your facebook appID
+
 4.(optional) If you want to authorize facebook via Safari, add a URL type in your info.plist file with  URL Schemes fbYOUR_FB_APP_ID (e.g. fb12333940) and in your AppDelegate.m add the following method
 
     -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
