@@ -76,16 +76,25 @@ SimpleShareKit allows you to integrate common sharing features to your iOS app. 
 	-(void)shareKitSharingFinished:(skFinishedType)type;
 	-(void)shareKitSharingFailed:(skFailureType)type;
 
-    typedef enum{
-    skFinishedEmailSent= 1,
-    skFinishedEmailSaved,
-    skFinishedTwitterDone,
-    skFinishedFacebookDone,
-    skFinishedSavedToGallery,
-    skFinishedCopiedToClipboard,
-    skFinishedFacebookPostOnFriendsWall,
-    skFinishedFacebookPostOnUsersWall,
-    }skFinishedType;
+    skFinishedType
+    
+    skFinishedEmailSent
+        User clicked send button
+    skFinishedEmailSaved
+        User clicked Save Draft button
+    skFinishedTwitterDone
+        Tweet Success
+    skFinishedFacebookDone
+        Facbook Native Post Success
+    skFinishedSavedToGallery
+        Image Saved to Gallery
+    skFinishedCopiedToClipboard
+        Image Copied on clipboard
+    skFinishedFacebookPostOnFriendsWall
+        User selected a friend and posted on his wall
+    skFinishedFacebookPostOnUsersWall
+        User pressed done without selecting friend and then post via FBWebDialog, so posted on user's wall
+
 
 
     typedef enum {
