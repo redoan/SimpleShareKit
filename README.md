@@ -62,7 +62,7 @@ SimpleShareKit allows you to integrate common sharing features to your iOS app. 
 
 *** put self in fromViewController parameter.
 
-*** postOnFriendsWall
+*** postOnFriendsWall params object format
 	
     NSMutableDictionary *param = [[NSMutableDictionary alloc] initWithObjectsAndKeys: 
 							@"SimpleShareKit", @"name", @"iOS 6 plug n play sharing", @"caption", 
@@ -76,7 +76,7 @@ SimpleShareKit allows you to integrate common sharing features to your iOS app. 
 	-(void)shareKitSharingFinished:(skFinishedType)type;
 	-(void)shareKitSharingFailed:(skFailureType)type;
 
-typedef enum{
+    typedef enum{
     skFinishedEmailSent= 1,
     skFinishedEmailSaved,
     skFinishedTwitterDone,
@@ -85,10 +85,10 @@ typedef enum{
     skFinishedCopiedToClipboard,
     skFinishedFacebookPostOnFriendsWall,
     skFinishedFacebookPostOnUsersWall,
-}skFinishedType;
+    }skFinishedType;
 
 
-typedef enum {
+    typedef enum {
     skFailureEmailCanceled= 1,
     skFailureEmailError,
     skFailureTwitterCancelled,
@@ -101,7 +101,7 @@ typedef enum {
     skFailureFacebookFeedDialogCanceled,
     skFailureFacebookFeedDialogError,
     
-}skFailureType;
+    }skFailureType;
 
 
 License
